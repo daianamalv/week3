@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery.js" charset="utf-8"></script>
+
+    <style>
+
+      @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=cyrillic');
+
+      html, body {
+        width: 70%;
+        margin: 0;
+        background-color: grey;
+      }
+
+      section {
+        width: 50vw;
+        height: 80vw;
+        margin-left: 350px;
+        margin-top: 100px;
+        position: absolute;
+
+      }
+
+      div {
+        position: absolute;
+      }
+
+      p {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      }
+
+    </style>
+
+    <script type="text/javascript">
+
+    $(function() {
+      $("div").each(function(index) {
+        let x      = Math.round(Math.random() * 1000)
+        let y      = Math.round(Math.random() * 1000)
+        let size   = Math.round(Math.random() * 500)
+
+        if (size < 50) {
+          size = size + 50
+        }
+
+        if (y > 300) {
+          y = y - 1000
+        }
+
+        $(this).css({
+          "top": y + "px",
+          "left": x + "px",
+          "font-size": size + "px"
+
+        })
+      })
+    })
+
+
+      $(document).ready(function(){
+
+        $("div").click(function () {
+          $(this).fadeTo("fast", Math.random());
+        })
+      })
+
+
+    </script>
+
+  </head>
+  <body>
+    <section>
+      <img src="pic.png">
+    </section>
+
+    <div class="letter"><p>Т</p> </div>
+    <div class="letter"><p>Р</p> </div>
+    <div class="letter"><p>А</p> </div>
+    <div class="letter"><p>Г</p> </div>
+    <div class="letter"><p>Е</p> </div>
+    <div class="letter"><p>Д</p> </div>
+    <div class="letter"><p>И</p> </div>
+    <div class="letter"><p>Я</p> </div>
+
+
+  </body>
+</html>
